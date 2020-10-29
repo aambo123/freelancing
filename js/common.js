@@ -1,4 +1,4 @@
-fetch("/html/template/header.html")
+fetch("html/template/header.html")
     .then(response => {
         return response.text()
     })
@@ -6,7 +6,7 @@ fetch("/html/template/header.html")
         document.querySelector("header").innerHTML = data;
     });
 
-fetch("/html/template/footer.html")
+fetch("html/template/footer.html")
     .then(response => {
         return response.text()
     })
@@ -14,7 +14,7 @@ fetch("/html/template/footer.html")
         document.querySelector("footer").innerHTML = data;
     });/*  */
 
-fetch("/html/template/head.html")
+fetch("html/template/head.html")
     .then(response => {
         return response.text()
     })
@@ -23,7 +23,7 @@ fetch("/html/template/head.html")
     });/*  */
 
 
-fetch("/html/template/side_nav.html")
+fetch("html/template/side_nav.html")
     .then(response => {
         return response.text()
     })
