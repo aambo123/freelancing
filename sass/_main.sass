@@ -1,0 +1,221 @@
+.ms_1
+    +container
+    display : flex
+    flex-wrap: wrap
+    padding : 60px 0
+    +respond-to-down(small)
+        padding : 40px 0
+    div
+        flex: 0 0 (100%/3)
+        max-width: (100%/3)
+        text-align : center
+        +respond-to(small)
+            &:not(:last-child)
+                border-right: 1px solid $table_border
+        img
+            margin-bottom : 20px
+            +respond-to-down(small)
+                margin-bottom : 10px
+        p
+            font-size : 18px
+            font-weight : 300
+            +respond-to(small)
+                br
+                    display : none
+            +respond-to-down(small)
+                font-size : 16px
+        h1
+            font-size : 46px
+            color : $primary
+            margin-bottom : 0
+            line-height : 1
+            +respond-to-down(small)
+                font-size : 22px
+            small  
+                font-size : 20px
+                +respond-to-down(small)
+                    font-size : 14px
+    
+section.section
+    +py(90px)
+    +respond-to-down(medium)
+        +py(60px)
+    +respond-to-down(small)
+        +py(30px)
+    &.ms_2
+        padding-bottom : 40px
+
+.main_title
+    font-size : 36px
+    font-weight : 300
+    margin-bottom : 50px
+    text-align : center
+    +respond-to(small)
+        br
+            display : none
+    +respond-to-down(small)
+        font-size : 24px
+        margin-bottom : 20px
+.ms_3
+    display : flex
+    flex-wrap: wrap
+    &>div
+        flex: 0 0 50%
+        max-width: 50%
+    .left
+        background : #ebebeb
+        line-height : 0
+        text-align : right
+        img
+            max-width : 100%
+        +respond-to-down(x-small)
+            flex: 0 0 100%
+            max-width : 100%
+            text-align : center
+    .right
+        background : #6761dd
+        color : #fff
+        display : flex
+        flex-direction: column
+        align-items: start
+        text-align : center
+        justify-content: center
+        padding-left : 120px
+        background-image : url($images+'ms_3_bg.png')
+        background-position: left center
+        background-repeat : no-repeat
+        +respond-to-down(large)
+            padding : 0 50px
+        +respond-to-down(medium)
+            padding : 0 30px
+            align-items: center
+        +respond-to-down(x-small)
+            flex: 0 0 100%
+            max-width : 100%
+            +py(50px)
+        p
+            font-size : 38px
+            margin-bottom : 30px
+            font-weight : 300
+            +respond-to-down(large)
+                font-size : 34px
+            +respond-to-down(medium)
+                font-size : 24px
+                
+        div
+            text-align : center
+
+
+
+.ms_4
+    +container
+    .con_wrap
+        display : flex
+        flex-wrap: wrap
+        .con
+            flex: 0 0 25%
+            max-width : 25%
+            text-align : center
+            +px($gap/2)
+            +respond-to-down(small)
+                display : flex
+                flex: 0 0 100%
+                max-width : 100%
+                text-align : left
+                align-items: center
+                +py($gap)
+            img
+                margin-bottom : 40px
+                +respond-to-down(small)
+                    margin-bottom : 0
+                    margin-right : $gap/2
+                    width : 80px
+            h2
+                font-size : 22px
+                font-weight : 400
+                letter-spacing : -0.05em
+                margin-bottom : 20px
+                +respond-to-down(medium)
+                    font-size : 18px
+                +respond-to-down(small)
+                    margin-bottom : 10px
+            p
+                letter-spacing : -0.05em
+                font-size : 16px
+                font-weight : 200
+                word-break: keep-all
+                +respond-to-down(medium)
+                    font-size : 14px
+                    br
+                        display : none
+                
+            &:not(:last-child)
+                border-right: 1px solid #e0e0e0
+                position: relative
+                +respond-to-down(small)
+                    border-right: none
+                    border-bottom: 1px solid #e0e0e0
+                &::after
+                    +psuedo
+                    +size(40px)
+                    border-radius: 40px
+                    background : #fff
+                    border: 1px solid #e0e0e0
+                    position: absolute
+                    top : 50%
+                    right : -20px
+                    transform: translateY(-50%)
+                    box-shadow: 6px 10px 10px rgba(black,.08)
+                    +respond-to-down(small)
+                        left : 50%
+                        bottom : 0
+                        top: unset
+                        right : unset
+                        transform: translate(-50%,50%)
+                &::before
+                    +psuedo
+                    position: absolute
+                    top : 50%
+                    +size(10px)
+                    +border(('right','bottom'),2px,#3e3e3e)
+                    right : -4px
+                    transform: translateY(-50%) rotate(-45deg)
+                    z-index : 1
+                    +respond-to-down(small)
+                        left : 50%
+                        bottom : 0
+                        top: unset
+                        right : unset
+                        transform: translate(-50%,50%) rotate(45deg)
+
+                
+.ms_5
+    background : #1e314a
+    color : #fff
+    +py(70px)
+    background-image : url($images+'ms_5_bg.jpg')
+    background-repeat : no-repeat
+    background-position : 13% 25% 
+    background-size : 170%
+    +respond-to-down(small)
+        +py(50px)
+        background-position : 50% 50% 
+    .wrap
+        display : flex
+        justify-content: space-between
+        align-items: center
+        +px(90px)
+        +respond-to-down(large)
+            +px(40px)
+        +respond-to-down(medium)
+            +px($gap/2)
+        +respond-to-down(small)
+            flex-direction: column
+            text-align : center
+        h2
+            font-size : 28px
+            font-weight : 300
+            +respond-to-down(medium)
+                font-size : 22px
+            +respond-to-down(small)
+                margin-bottom : 30px

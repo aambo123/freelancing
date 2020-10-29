@@ -1,0 +1,43 @@
+$gap : 30px
+$green : #1ead7c
+$red : #da2323
+$orange : #ea6718
+$blue : #4972e6
+$dark : #444444
+$dark-grey: #7f7f7f
+$light : #f9f9f9
+$primary: $orange
+
+$border_color : #bbb
+$table_border : #ccc
+$table_header : #f5f5f5
+$disabled : #e3e3e3
+$headings-margin-bottom: 0rem
+$paragraph-margin-bottom: 0rem
+$images: '/images/'
+$fonts: '/Fonts/'
+
+$theme-colors: ('white':#fff,'black':#000,'red':$red,'green':$green,'orange':$orange,'blue':$blue,'dark':$dark,'light':$light)
+
+$font-family-base: 'Noto Sans', 'Malgun Gothic', dotum, sans-serif
+$font-size-base: 16px
+$font-weight-base: 400
+$line-height-base: 1.33333
+$layout_padding: 15px
+$headings-margin-bottom: 0rem
+$paragraph-margin-bottom:  0rem
+
+$link-color: inherit
+$link-decoration: none
+$link-hover-color: inherit
+$link-hover-decoration: none
+$table-cell-padding: .75rem
+$text-muted: #444444
+
+$positions: ("t":top,"b":bottom,"l":left,"r":right)
+
+
+@each $color,$value in $theme-colors
+    .text_#{$color}
+        color : $value
+     

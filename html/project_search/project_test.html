@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/slick//slick.js"></script>
+<script src="/js/common.js"></script>
+
+<body>
+    <header id="nav" class="">
+    </header>
+    <div class="sub_header">
+        프로젝트 등록
+    </div>
+    <div class="container main_con">
+        <div class="row">
+            <aside>
+                
+            </aside>
+            <main>
+                <div class="login_head">회원가입</div>
+                <form action="">
+                    <div class="form_head">
+                        <h1 class="form_title">클라이언트 정보</h1>
+                        <span>모든 값은 필수입력 사항입니다.</span>
+                    </div>
+
+                    <div class="form_con">
+                        <div class="form_row">
+                            <div class="form_header">회원구분</div>
+                            <div class="form_group">
+                                <label>
+                                    <input type="radio" name="member_type" >
+                                    <span>개인</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="member_type" >
+                                    <span>기업</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_header">아이디</div>
+                            <div class="form_group">
+                                <div class="input_group">
+                                    <input type="text" name="" class="form_control" >
+                                    <a href="" class="btn btn_sm dark outline ml-1" style="background-color: #f9f9f9;">중복확인</a>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_header">이름</div>
+                            <div class="form_group">
+                                <input type="text" name="" class="form_control" >
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_header">비밀번호</div>
+                            <div class="form_group">
+                                <input type="password" name="" class="form_control" >
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_header">비밀번호 확인</div>
+                            <div class="form_group">
+                                <input type="password" name="" class="form_control" >
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_header">휴대폰</div>
+                            <div class="form_group">
+                                <input type="text" name="" class="form_control" >
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_header">이메일</div>
+                            <div class="form_group">
+                                <input type="email" name="" class="form_control" >
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form_head">
+                        <h1 class="form_title">클라이언트 정보</h1>
+                        <span>모든 값은 필수입력 사항입니다.</span>
+                    </div>
+                    
+                    <div class="form_con">
+                        
+                        <div class="form_row">
+                            <div class="form_header">상호명</div>
+                            <div class="form_group">
+                                <input type="text" name="" class="form_control" >
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_header">대표자</div>
+                            <div class="form_group">
+                                <input type="text" name="" class="form_control" >
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_header">사업자등록번호</div>
+                            <div class="form_group">
+                                <input type="text" name="" class="form_control" >
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_header">주소</div>
+                            <div class="form_group">
+                                <div class="input_group">
+                                    <input type="text" name="footer_zip" class="form_control small" >
+                                    <button type="button" class="btn btn_sm dark outline mx-1" style="background-color: #f9f9f9;"
+                                    onclick="openSearchAddress('footer_zip','footer_address1','footer_address2')">우편번호 찾기</button>  
+                                </div>
+                                <div class="input_group">
+                                    <input type="text" name="footer_address1" class="form_control mr-1" >
+                                    <input type="text" name="footer_address2" class="form_control" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label class="my-4">
+                        <input type="checkbox" name="" >
+                        <span>이용약관 및 개인정보 처리방침에 동의합니다.</span>
+                    </label>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn orange">회원가입</button>
+                    </div>
+                </form>
+            </main>
+            
+        </div>
+    </div>
+    <footer></footer>
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+    <script>
+        function openSearchAddress(zipCodeName, addr1Name, addr2Name) {
+            var themeObj = {
+                searchBgColor: "#ea6718", //검색창 배경색
+                queryTextColor: "#FFFFFF" //검색창 글자색
+            };
+            new daum.Postcode({
+                oncomplete : function(data) {
+                    //json 확인 필요
+                    //console.log(data)
+                    $('input[name=' + zipCodeName + ']').val(data.zonecode);
+                    $('input[name=' + addr1Name + ']').val(data.address);
+                    if (addr2Name != null) {
+                        $('input[name=' + addr2Name + ']').focus();
+                    }
+                    console.log(data)
+                },
+                theme: themeObj
+            }).open();
+        }
+    </script>
+</body>
+
+</html>

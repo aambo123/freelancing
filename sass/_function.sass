@@ -1,0 +1,15 @@
+@function get_color($color)
+    @if (lightness($color) > 60)
+        @return black
+    @else
+        @return white
+@function _abs($number)
+    @if $number >= 0
+        @return $number
+    @return -1*$number
+
+@function _sqrt($square, $tolerance: .001, $estimate: $square/2)
+    @if _abs($square - $estimate*$estimate) < $tolerance
+        @return $estimate
+
+    @return _sqrt($square, $tolerance, ($estimate + $square/$estimate)/2)

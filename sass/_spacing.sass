@@ -1,0 +1,35 @@
+@for $var from 1 through 10
+    $size: 4*$var+px
+    .w-#{$var*10}
+        width: $var*10%
+    .py-#{$var}
+        +py(4*$var+px)
+    @each $position,$value in $positions
+        .m#{$position}-#{$var}
+            margin-#{$value}: $size !important
+        .p#{$position}-#{$var}
+            padding-#{$value}: $size !important
+        .m#{$position}-auto
+            margin-#{$value}: auto !important
+            
+    .my-#{$var}
+        +my($size)
+    .mx-#{$var}
+        +mx($size)
+    .py-#{$var}
+        +py($size)
+    .px-#{$var}
+        +px($size)
+    .p-#{$var}
+        +px($size)
+        +py($size)
+    .m-#{$var}
+        +mx($size)
+        +my($size)
+
+.text-center
+    text-align : center
+.text-left
+    text-align : left
+.text-right
+    text-align : right

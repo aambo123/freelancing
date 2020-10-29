@@ -1,0 +1,49 @@
+.btn
+    text-shadow: none
+    display: inline-block
+    text-decoration: none
+    font-size: 16px
+    text-transform: uppercase
+    +px(40px)
+    +py(20px)
+    line-height : 1
+    border: none
+    font-weight: 400
+    text-align : center
+    outline: none
+    border-radius: 6px
+    border: 1px solid #555555
+    white-space: nowrap
+    &:not(:disabled):not(.disabled)
+        cursor: pointer
+    &.btn_sm
+        font-size : 13px
+        +px(12px)
+        +py(8px)
+        border-radius: 4px
+    &.square
+        border-radius: 0
+    &.plus
+        position : relative
+        padding-left : 26px
+        &::after,&::before
+            +psuedo
+            width : 2px
+            height : 12px
+            background : #535353
+            position: absolute
+            left : 14px
+            top : 50%
+            transform: translateY(-50%)
+        &::before
+            transform: translateY(-50%) rotate(90deg)
+
+@each $color,$value in $theme-colors
+    .btn.#{$color}
+        background : $value
+        color: get_color($value)
+        border-color: $value
+        &.outline
+            background : transparent
+            color : $value
+            border-color: $value

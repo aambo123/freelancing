@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/slick//slick.js"></script>
+
+<body>
+    <header id="nav" class="">
+    </header>
+    <div class="sub_header">
+        프로젝트 등록
+    </div>
+    <div class="container main_con">
+        <div class="row">
+            <aside>
+
+            </aside>
+            <main>
+                <div class="search_box">
+                    <form action="">
+                        <div class="input_group">
+                            <div class="custom_select">
+                                <div class="selected">전체</div>
+                                <ul class="">
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="city" id="">
+                                            <span>test5</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="city" id="">
+                                            <span>test6</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="city" id="">
+                                            <span>test7</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="city" id="">
+                                            <span>test8</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <input type="text" name="searchWord" class="form_control">
+                            <button type="submit" class="btn btn_sm dark square">검색</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="flex align-center my-4">
+                    <img src="/images/ms_icon1.png" alt="" class="mr-1" style="width: 20px;">
+                    <strong><span id="totalCount">1,000</span>개</strong>의 프로젝트가 있습니다.
+                </div>
+
+                <div class="tab_wrapper order mb-4">
+                    <a href="" class="tab active">최근 등록순</a>
+                    <a href="" class="tab">금액 높은 순</a>
+                    <a href="" class="tab">마감 임박 순</a>
+                </div>
+
+                    <div class="row" id="repeatWrap">
+                        <div class="col-sm-12 repeatProj">
+                            <div class="card_wrap project_card mb-4">
+                                <div class="card">
+                                    <div class="card_head">
+                                        <div class="left">
+                                            <div class="badge_wrap">
+                                                <span class="badge blue">모집중</span>
+                                                <span class="badge blue outline">모집중</span>
+                                            </div>
+                                            <a class="title" href="../html/project_detail.html">
+                                                회사 홍보용 홈페이지 개발 작업을 의뢰합니다
+                                            </a>
+                                        </div>
+                                        <div class="right">
+                                            <p>등록일자: 2020-07-15</p>
+                                            <p class="text_red">마감일자: 2020-07-31</p>
+                                        </div>
+                                    </div>
+                                    <div class="card_info">
+                                        <ul class="row">
+                                            <li class="col-auto">
+                                                <p>예상금액 : 100,000,000</p>
+                                            </li>
+                                            <li class="col-auto">
+                                                <p>예상기간 : 100일</p>
+                                            </li>
+                                            <li class="col-auto">
+                                                <p>카테고리 : 기획, 개발</p>
+                                            </li>
+                                            <li class="col-auto">
+                                                <p>분야 : 웹사이트</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card_body">
+                                        <p>
+                                            대기업 계열사 O2O 구축 프로젝트 입니다. -
+                                            콘텐츠 기반 파트와 입점형 쇼핑몰 파트 2가지로
+                                            구성되어 있으며, 입점형 jav ...
+                                        </p>
+                                    </div>
+                                    <div class="card_footer">
+                                        <span>PHP</span>
+                                        <span>.NET</span>
+                                        <span>MYSQL</span>
+                                        <span>DBA</span>
+                                        <span>ORACLE</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+            </main>  
+
+        </div>
+    </div>
+    <footer></footer>
+    <script src="/js/common.js"></script>
+
+    <script>
+        $('.order .tab').click(function (e) { 
+            e.preventDefault();
+            $('.order .tab').removeClass('active');
+            $(this).addClass('active');
+        });
+        cloneRepeat('.repeatProj', '#repeatWrap', 3)
+    </script>
+
+</body>
+
+</html>

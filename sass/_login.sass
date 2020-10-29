@@ -1,0 +1,67 @@
+.login_head 
+    height : 60px
+    line-height : 60px
+    font-size : 24px
+    font-weight : 600
+    border-bottom : 2px solid #000
+    +respond-to-down(small)
+        height : 40px
+        line-height : 40px
+        font-size : 16px
+.login_wrap
+    +py(80px)
+    display : flex
+    flex-wrap: wrap
+    justify-content: center
+    +respond-to-down(small)
+        +py(40px)
+    .title
+        flex : 0 0 100%
+        max-width : 100%
+        text-align : center
+        font-size : 34px
+        font-weight : 600
+        width : 100% 
+        margin-bottom : 60px
+        +respond-to-down(small)
+            font-size : 24px
+            margin-bottom : 30px
+    .login_col
+        flex : 0 1 360px
+        max-width : 360px
+        width : 100%
+        text-align : center
+        img
+            margin-bottom : 40px
+            max-width : 100%
+            +respond-to-down(small)
+                width : 70%
+    .login_form
+        .control
+            display : block
+            font-size : 16px
+            height : 57px
+            line-height : 57px
+            border: 1px solid $border-color
+            padding-left : 22px
+            width : 100%
+            margin-bottom : 12px
+        button
+            display : blockv
+            font-size : 16px
+            border: 0
+            background : $red
+            color : #fff
+            text-align : center
+            padding : 22px
+            width : 100%
+            +my(25px)
+        .flex
+            display : flex
+            align-items: center
+            justify-content: space-around
+            font-size : 14px
+            font-weight : 300
+            text-transform : uppercase
+            text-decoration : underline  
+            padding : 0 20px    

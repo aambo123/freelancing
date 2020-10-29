@@ -1,0 +1,63 @@
+=respond-to($breakpoint)
+    @if $breakpoint==x-small
+        @media(min-width:576px)
+            @content
+    @else if $breakpoint==small
+        @media(min-width:768px)
+            @content
+    @else if $breakpoint==medium
+        @media(min-width:992px)
+            @content
+    @else if $breakpoint==large
+        @media(min-width:1200px)
+            @content
+    @else if $breakpoint==x-large
+        @media(min-width:1260px)
+            @content
+    @else
+        @media (min-width:$breakpoint)
+            @content
+
+=respond-to-down($breakpoint)
+    @if $breakpoint==x-small
+        @media(max-width:575px)
+            @content
+    @else if $breakpoint==small
+        @media(max-width:767px)
+            @content
+    @else if $breakpoint==medium
+        @media(max-width:991px)
+            @content
+    @else if $breakpoint==large
+        @media(max-width:1200px)
+            @content
+    @else if $breakpoint==x-large
+        @media(max-width:1260px)
+            @content
+=mx($mx)
+    margin-left: $mx
+    margin-right: $mx
+=my($my)
+    margin-top: $my
+    margin-bottom: $my
+=px($px)
+    padding-left: $px
+    padding-right: $px
+=py($py)
+    padding-top: $py
+    padding-bottom: $py
+=size($size)
+    width: $size
+    height: $size
+=container
+    width: 100%
+    max-width: 1200px
+    margin: auto
+    +px($gap/2)
+
+=psuedo
+    content: ''
+    display : inline-block
+=border($positions,$width,$color)
+    @each $pos in $positions
+        border-#{$pos}: $width solid $color

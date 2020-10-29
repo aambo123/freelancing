@@ -1,0 +1,20 @@
+.badge
+    display : inline-block
+    height : 25px
+    font-size : 13px
+    line-height : 25px
+    font-weight : 300
+    +px(15px)
+    border-radius: 5rem
+    background : $dark-grey
+    border: 1px solid $dark-grey
+    color : #000
+@each $color,$value in $theme-colors
+    .badge.#{$color}
+        background : $value
+        color : get_color($value)
+        border-color : $value
+    .badge.outline.#{$color}
+        background : #fff
+        border-color : $value
+        color : $value
