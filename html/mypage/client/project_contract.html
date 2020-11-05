@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/slick//slick.js"></script>
+<script src="/js/waitMe/waitMe.min.js"></script>
+<body>
+    <header id="nav" class="">
+    </header>
+    <div class="sub_header">
+        프로젝트 등록
+    </div>
+    <div class="container main_con">
+        <div class="row">
+            <aside>
+
+
+            </aside>
+            <main>
+                <h2 class="detail_top">프로젝트 계약 관리
+                    <a href="progress_project.html" class="btn btn_sm dark" style="float: right;">
+                        진행중인 프로젝트로 돌아가기
+                    </a>
+                </h2>
+
+                <div class="detail_title">
+                    <h2>계약 정보</h2>
+                </div>
+
+                <table class="table table-flex">
+                    <tbody>
+                        <tr>
+                            <th>제 목</th>
+                            <td class="long">회사 홍보용 홈페이지 개발 작업을 의뢰합니다</td>
+                        </tr>
+                        <tr>
+                            <th>계약 체결일</th>
+                            <td>2020-08-01</td>
+                            <th>상태</th>
+                            <td>완료
+                                <a href="" class="btn red btn_sm outline">검수 완료 및 승인하기</a>
+                                <a href="" class="btn grey btn_sm">승인완료</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>총 계약 금액</th>
+                            <td>10,000,000원 <small>(부가가치세 10% 별도)</small></td>
+                            <th>프로젝트 기간</th>
+                            <td>50일 <small>(작업기간 40일, 접수기간 10일)</small></td>
+                        </tr>
+                        <tr>
+                            <th>프로젝트 시작</th>
+                            <td>2020-08-05</td>
+                            <th>프로젝트 완료</th>
+                            <td>2020-08-31</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="detail_title">
+                    <h2>연락처 정보</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="color_card blue">
+                            <div class="head">
+                                클라이언트 아이디 “IDID01”
+                            </div>
+                            <div class="body">
+                                <ul>
+                                    <li>- 회사명 : 삼성</li>
+                                    <li>- 이름  : 홍길동</li>
+                                    <li>- 연락처 : 010-1234-5678</li>
+                                    <li>- 이메일 : aa@bb.cc</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="color_card orange">
+                            <div class="head">
+                                클라이언트 아이디 “IDID01”
+                            </div>
+                            <div class="body">
+                                <ul>
+                                    <li>- 회사명 : 삼성</li>
+                                    <li>- 이름  : 홍길동</li>
+                                    <li>- 연락처 : 010-1234-5678</li>
+                                    <li>- 이메일 : aa@bb.cc</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail_title">
+                    <h2>연락처 정보</h2>
+                </div>
+
+                <table class="table centered">
+                    <thead>
+                        <tr>
+                            <th>프로젝트 차수</th>
+                            <th>계약금</th>
+                            <th>프로젝트 </th>
+                            <th>상태</th>
+                            <th>자세히 보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1차</td>
+                            <td>5,000,000원</td>
+                            <td>5일</td>
+                            <td>완료</td>
+                            <td><a href="" class="btn btn_sm black outline" >보기</a></td>
+                        </tr>
+                        <tr>
+                            <td>2차 <span class="badge blue">진행중</span></td>
+                            <td>6,000,000원</td>
+                            <td>40일</td>
+                            <td><span class="text_blue">진행중</span></td>
+                            <td><a href="" class="btn btn_sm black outline" onclick="openLayer(this)" data-href="layer/contract_detail.html">보기</a></td>
+                        </tr>
+                        <tr>
+                            <td>3차</td>
+                            <td>7,000,000원</td>
+                            <td>3일</td>
+                            <td><span class="text_green">시작전</span></td>
+                            <td><a href="" class="btn btn_sm black outline">보기</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="/js/common.js"></script>
+    <script>
+    </script>
+
+</body>
+
+</html>

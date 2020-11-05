@@ -1,0 +1,79 @@
+<div class="popup">
+    <div class="popup_header">
+        <h1 class="title">2차 프로젝트 <span class="badge blue">진행중</span></h1>
+        <a href="" onclick="closeLayer()" class="close"></a>
+    </div>
+    <div class="popup_body">
+        <div class="detail_title">
+            <h2>프로젝트 일정
+                <a href="summary.html" class="btn btn_sm red outline">검수 완료 및 승인하기</a>
+                <a href="summary.html" class="btn btn_sm grey">승인완료</a>
+            </h2>
+        </div>
+        <table class="table table-flex">
+            <tbody>
+                <tr>
+                    <th>작업 시작일</th>
+                    <td>2020-08-05</td>
+                    <th>실제 시작일</th>
+                    <td>2020-08-06</td>
+                        
+                </tr>
+                <tr>
+                    <th>작업 완료일</th>
+                    <td>2020-09-01</td>
+                    <th>실제 완료일</th>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <th>검수 완료일</th>
+                    <td>2020-08-31</td>
+                    <th>실제 완료일s</th>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="detail_title">
+            <h2>결제</h2>
+        </div>
+        <table class="table table-flex">
+            <tbody>
+                <tr>
+                    <th>클라이언트 결제금액</th>
+                    <td class="long">60,000,000원 <small>(부가가치세 10% 별도)</small></td>
+                </tr>
+                <tr>
+                    <th>결제일</th>
+                    <td>2020-08-05</td>
+                    <th>실제 결제일</th>
+                    <td>2020-08-06</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="detail_title">
+            <h2>지급</h2>
+        </div>
+        <table class="table table-flex">
+            <tbody>
+                <tr>
+                    <th>프리랜서 지급대금</th>
+                    <td class="long">5,400,000원 <small>(사이트 이용요금 10% 차감, 부가가치세 10% 포함 금액)</small></td>
+                </tr>
+                <tr>
+                    <th>지급일</th>
+                    <td>2020-09-10</td>
+                    <th>실제 결제일</th>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <th>지급조건</th>
+                    <td class="long">프로젝트 작업 결과물을 전달하여 ‘클라이언트’가 검수 완료 시 지급</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    cloneRepeat('#repeatTr','#repeatBody',3)
+</script>

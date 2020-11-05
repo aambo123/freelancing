@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/slick//slick.js"></script>
+
+<body>
+    <header id="nav" class="">
+    </header>
+    <div class="sub_header">
+        프로젝트 등록
+    </div>
+    <div class="container main_con">
+        <div class="row">
+            <aside>
+
+
+            </aside>
+            <main id="target">
+
+                <h2 class="detail_top" id="title">검토 중</h2>
+
+                <div class="tab_wrapper big">
+                    <a href="" class="tab active" >검토중</a>
+                    <a href="" class="tab" >등록샐패</a>
+                </div>
+
+                <ul class="detail_desc">
+                    <li>현재 검토 중인 프로젝트 목록입니다. 승인까지는 최대 24시간이 소요될 수 있습니다.</li>
+                    <li>검수가 완료되면 ‘프로젝트 찾기’ 목록에서 해당 프로젝트가 노출됩니다.</li>
+                    <li>이용약관에 위배되거나 불법적인 내용이 있는 경우, 프로젝트가 승인되지 않을 수 있습니다.</li>
+                </ul>
+
+                <div class="project_list">
+
+                    <!-- for pending project -->
+
+                    <div class="project">
+                        <div class="detail_head borderless">
+                            <div class="left">
+                                <div class="badge_wrap">
+                                    <span>회사 홍보용 홈페이지 개발 작업을 의뢰합니다</span>
+                                </div>
+                                <p class="fr_info">
+                                    <img src="/images/ms_icon3.png" class="mr-1" style="width: 16px;">
+                                    <span>
+                                        프리랜서 : DID
+                                    </span>
+                                    <img src="/images/ms_icon1.png" class="mr-1" style="width: 16px;">
+                                    <span>
+                                        계약 체결일 : 2020-08-01
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="right">
+                                <a href="project_log.html"  class="btn btn_sm dark outline">프로젝트 기록</a>
+                                <a href="project_contract.html"  class="btn btn_sm dark outline">프로젝트 계약 관리</a>
+                                <a href="" onclick="openRecruits(this,'partners')"  class="btn btn_sm dark open">파트너 보기</a>
+                            </div>
+                        </div>
+        
+                        <div class="detail_info mb-4">
+                            <ul class="row">
+        
+                                <li class="col-sm-6">
+                                    <p>계약금액 : 10,000,000원(부가가치세 10% 별도)</p>
+                                </li>
+                                <li class="col-sm-6">
+                                    <p>프로젝트 시작 : 2020-08-03</p>
+                                </li>
+                                <li class="col-sm-6">
+                                    <p>프로젝트 기간 : 50일(작업기간 40일, 검수기간 10일)</p>
+                                </li>
+                                <li class="col-sm-6">
+                                    <p>남은 프로젝트 기간 : 30일 남음</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- for recruiting project -->
+                    
+                </div>
+                
+
+            </main>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="/js/common.js"></script>
+    <script>
+        $.urlParam = function (name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            if (results == null) {
+                return null;
+            }
+            else {
+                return decodeURI(results[1]) || 0;
+            }
+        }
+        $(document).ready(function () {
+            if($.urlParam('search')){
+                var search = $.urlParam('search');
+                if (search == 'pending') {
+                    $('#title').text('검토 중')
+                }else{
+                    $('#title').text('프리랜서 모집중')
+                    $('.tab_wrapper').hide()
+                }
+            }
+        });
+        
+        
+        function openRecruits(obj,type){
+            var txt = type == 'recruit'?'지원자':'파트너' ;
+            var url = type + '.html';
+            console.log('url :>> ', url);
+            event.preventDefault();
+            var open = $(obj).hasClass('active');
+            var gotRecruits = $(obj).closest('.project').find('.project_recruits').length;
+            if(!open){
+                $(obj).addClass('active');
+                $(obj).text(txt+' 닫기');
+                
+                if(gotRecruits == 0){
+                    $.ajax({
+                        type: "get",
+                        url: url,
+                        success: function (response) {
+                            $(obj).closest('.project').append(response)
+                            $(obj).closest('.project').find('.project_recruits').slideDown()
+                        }
+                    });
+                }
+                $(obj).closest('.project').find('.project_recruits').slideDown()
+                
+            }else{
+                $(obj).removeClass('active');
+                $(obj).text(txt+' 보기');
+                $(obj).closest('.project').find('.project_recruits').slideUp()
+            }
+        }
+    </script>
+
+</body>
+
+</html>

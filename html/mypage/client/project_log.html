@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/slick//slick.js"></script>
+
+<body>
+    <header id="nav" class="">
+    </header>
+    <div class="sub_header">
+        프로젝트 등록
+    </div>
+    <div class="container main_con">
+        <div class="row">
+            <aside>
+
+
+            </aside>
+            <main>
+                <h2 class="detail_top">프로젝트 기록
+                    <a href="progress_project.html" class="btn btn_sm dark" style="float: right;">진행중인 프로젝트로 돌아가기</a>
+                </h2>
+                
+                <table class="table table-borderless centered">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody id='target'>
+                        <tr id="clone">
+                            <td>12</td>
+                            <td class="text-left">
+                                <a href="project_log_detail.html" class="link">기능이 추가 되었습니다.s</a>
+                            </td>
+                            <td>관리자</td>
+                            <td>2020-11-03</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="/js/common.js"></script>
+    <script>
+       cloneRepeat('#clone', '#target', 12) 
+    </script>
+
+</body>
+
+</html>

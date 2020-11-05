@@ -61,3 +61,46 @@
 =border($positions,$width,$color)
     @each $pos in $positions
         border-#{$pos}: $width solid $color
+
+=rightLine($space,$height,$color)
+    position : relative
+    &:not(:last-child)
+        margin-right : $space
+        padding-right : $space
+        &::after
+            +psuedo
+            width : 1px
+            height : $height
+            background : $color
+            position : absolute
+            right : 0
+            top : 50%
+            transform: translateY(-50%)
+
+=aspect-center
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+
+=circle($size,$color)
+    display : inline-block
+    +size($size)
+    border-radius : $size
+    background : $color
+    position : relative
+
+=addPlus($height,$width,$color)
+    position : relative
+    &::after,&::before
+        +psuedo
+        width : $width
+        height : $height
+        background : $color
+        position : absolute
+        left : 50%
+        top : 50%
+        transform : translate(-50%,-50%)
+    &::before
+        transform : translate(-50%,-50%) rotate(90deg)

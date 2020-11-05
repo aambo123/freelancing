@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/slick//slick.js"></script>
+
+<body>
+    <header id="nav" class="">
+    </header>
+    <div class="sub_header">
+        프로젝트 등록
+    </div>
+    <div class="container main_con">
+        <div class="row">
+            <aside>
+    
+                <div class="filter_wrap">
+                    <p><a href="freelancer_detail.html" class="">프리랜서 정보</a></p>
+                    <p><a href="summary.html" >자기소개</a></p>
+                    <p><a href="portfolio.html">포토폴리오</a></p>
+                    <p><a href="knowledge.html">보유기술</a></p>
+                    <p><a href="career.html">경력</a></p>
+                    <p><a href="education.html">학력</a></p>
+                    <p><a href="achievement.html">자격증</a></p>
+                </div>
+            </aside>
+            <main id="target">
+                
+                <h2 class="detail_top">
+                    <span class="text_orange">IDID0001</span>의 경력
+                </h2>
+
+                <table class="table mb-2">
+                    <tbody>
+                        <tr>
+                            <th>회사명</th>
+                            <td>타고플러스</td>
+                        </tr>
+                        <tr>
+                            <th>근무부서</th>
+                            <td>개발 1팀</td>
+                        </tr>
+                        <tr>
+                            <th>직위</th>
+                            <td>과장</td>
+                        </tr>
+                        <tr>
+                            <th>근무기간</th>
+                            <td>2001년 1월 ~ 2001년 10월 (10개월)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>회사명</th>
+                            <td>타고플러스</td>
+                        </tr>
+                        <tr>
+                            <th>근무부서</th>
+                            <td>개발 1팀</td>
+                        </tr>
+                        <tr>
+                            <th>직위</th>
+                            <td>과장</td>
+                        </tr>
+                        <tr>
+                            <th>근무기간</th>
+                            <td>2001년 1월 ~ 2001년 10월 (10개월)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="/js/common.js"></script>
+    <script>
+        cloneRepeat('#repeatText','#target',6)
+        $(document).ready(function () {
+            var paths = location.pathname.split('/');
+            var pathCount = paths.length;
+            var fileName = paths[pathCount - 1];
+            $('.filter_wrap a[href="'+fileName+'"]').addClass('text_orange')
+        });
+    </script>
+
+</body>
+
+</html>

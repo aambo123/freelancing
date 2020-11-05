@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/slick//slick.js"></script>
+
+<body>
+    <header id="nav" class="">
+    </header>
+    <div class="sub_header">
+        프로젝트 등록
+    </div>
+    <div class="container main_con">
+        <div class="row">
+            <aside>
+    
+                <div class="filter_wrap">
+                    <p><a href="freelancer_detail.html" class="">프리랜서 정보</a></p>
+                    <p><a href="summary.html" >자기소개</a></p>
+                    <p><a href="portfolio.html">포토폴리오</a></p>
+                    <p><a href="knowledge.html">보유기술</a></p>
+                    <p><a href="career.html">경력</a></p>
+                    <p><a href="education.html">학력</a></p>
+                    <p><a href="achievement.html">자격증</a></p>
+                </div>
+            </aside>
+            <main id="target">
+                
+                <h2 class="detail_top">
+                    <span class="text_orange">IDID0001</span>의 자격증
+                </h2>
+
+                <table class="table centered">
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>발행처</th>
+                            <th>발행일자</th>
+                            <th>자격증번호</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>정보처리기사</td>
+                            <td>한국산업인력공단</td>
+                            <td>2007년 1월 1일</td>
+                            <td>54159887744</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="/js/common.js"></script>
+    <script>
+        cloneRepeat('#repeatText','#target',6)
+        $(document).ready(function () {
+            var paths = location.pathname.split('/');
+            var pathCount = paths.length;
+            var fileName = paths[pathCount - 1];
+            $('.filter_wrap a[href="'+fileName+'"]').addClass('text_orange')
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/slick//slick.js"></script>
+
+<body>
+    <header id="nav" class="">
+    </header>
+    <div class="sub_header">
+        프로젝트 등록
+    </div>
+    <div class="container main_con">
+        <div class="row">
+            <aside>
+    
+                <div class="filter_wrap">
+                    <p><a href="freelancer_detail.html" class="">프리랜서 정보</a></p>
+                    <p><a href="summary.html" >자기소개</a></p>
+                    <p><a href="portfolio.html">포토폴리오</a></p>
+                    <p><a href="knowledge.html">보유기술</a></p>
+                    <p><a href="career.html">경력</a></p>
+                    <p><a href="education.html">학력</a></p>
+                    <p><a href="achievement.html">자격증</a></p>
+                </div>
+            </aside>
+            <main id="target">
+                
+                <h2 class="detail_top">
+                    <span class="text_orange">IDID0001</span>의 경력
+                </h2>
+
+                <table class="table centered">
+                    <thead>
+                        <tr>
+                            <th>학교명</th>
+                            <th>전공</th>
+                            <th>분류</th>
+                            <th>상태</th>
+                            <th>입학일</th>
+                            <th>졸업일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>한국대학교</td>
+                            <td>컴퓨터공학</td>
+                            <td>대학교</td>
+                            <td>졸업</td>
+                            <td>2000년 3월</td>
+                            <td>2005년 2월</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="/js/common.js"></script>
+    <script>
+        cloneRepeat('#repeatText','#target',6)
+        $(document).ready(function () {
+            var paths = location.pathname.split('/');
+            var pathCount = paths.length;
+            var fileName = paths[pathCount - 1];
+            $('.filter_wrap a[href="'+fileName+'"]').addClass('text_orange')
+        });
+    </script>
+
+</body>
+
+</html>

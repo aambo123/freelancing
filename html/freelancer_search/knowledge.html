@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/slick//slick.js"></script>
+
+<body>
+    <header id="nav" class="">
+    </header>
+    <div class="sub_header">
+        프로젝트 등록
+    </div>
+    <div class="container main_con">
+        <div class="row">
+            <aside>
+    
+                <div class="filter_wrap">
+                    <p><a href="freelancer_detail.html" class="">프리랜서 정보</a></p>
+                    <p><a href="summary.html" >자기소개</a></p>
+                    <p><a href="portfolio.html">포토폴리오</a></p>
+                    <p><a href="knowledge.html">보유기술</a></p>
+                    <p><a href="career.html">경력</a></p>
+                    <p><a href="education.html">학력</a></p>
+                    <p><a href="achievement.html">자격증</a></p>
+                </div>
+            </aside>
+            <main id="target">
+                
+                <h2 class="detail_top">
+                    <span class="text_orange">IDID0001</span>의 보유 기술
+                </h2>
+
+                <table class="table centered">
+                    <colgroup>
+                        <col width="">
+                        <col width="20%">
+                        <col width="30%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>기술명</th>
+                            <th>숙련도</th>
+                            <th>경험</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>php</td>
+                            <td>특급</td>
+                            <td>10년 이상</td>
+                        </tr>
+                        <tr>
+                            <td>jsp</td>
+                            <td>고급</td>
+                            <td>5년 이상 ~ 10년 미만</td>
+                        </tr>
+                        <tr>
+                            <td>Oracle</td>
+                            <td>고급</td>
+                            <td>1년 이상 ~ 3년 미만</td>
+                        </tr>
+                        <tr>
+                            <td>Apache</td>
+                            <td>중급</td>
+                            <td>10년 이상</td>
+                        </tr>
+                        <tr>
+                            <td>Asp</td>
+                            <td>중급</td>
+                            <td>5년 이상 ~ 10년 미만</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="/js/common.js"></script>
+    <script>
+        cloneRepeat('#repeatText','#target',6)
+        $(document).ready(function () {
+            var paths = location.pathname.split('/');
+            var pathCount = paths.length;
+            var fileName = paths[pathCount - 1];
+            $('.filter_wrap a[href="'+fileName+'"]').addClass('text_orange')
+        });
+    </script>
+
+</body>
+
+</html>

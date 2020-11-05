@@ -1,0 +1,58 @@
+.pagination
+    text-align : center
+    +my($gap/2)
+    ul
+        display : flex
+        align-items : center
+        justify-content : center
+        li
+            a
+                display : inline-block
+                width : 30px
+                height : 30px
+                font-size : 16px
+                font-weight : 300
+                line-height : 30px
+                transition : all .2s ease-in
+                &.active,&:hover
+                    background : $primary
+                    border-radius : 5rem
+                    color : #fff
+                &.first,&.prev,&.next,&.last
+                    position : relative
+                    &::before
+                        +psuedo
+                        position : absolute
+                        +size(8px)
+                        +border(('left','bottom'),1px,#656565)
+                        top : 50%
+                        left : 50%
+                    &::before,&::after
+                        transition : all .2s ease-in
+                    &:hover
+                        &::before,&::after
+                            border-color : #fff
+                &.first,&.last
+                    &::after
+                        +psuedo
+                        position : absolute
+                        +size(8px)
+                        +border(('left','bottom'),1px,#656565)
+                        top : 50%
+                        left : 50%
+                &.first
+                    &::before
+                        transform: translate(-60%,-50%) rotate(45deg)
+                    &::after
+                        transform: translate(0%,-50%) rotate(45deg)
+                &.prev
+                    &::before
+                        transform: translate(-30%,-50%) rotate(45deg)
+                &.next
+                    &::before
+                        transform: translate(-70%,-50%) rotate(-135deg)
+                &.last
+                    &::before
+                        transform: translate(-40%,-50%) rotate(-135deg)
+                    &::after
+                        transform: translate(-100%,-50%) rotate(-135deg)

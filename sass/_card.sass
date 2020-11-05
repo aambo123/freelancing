@@ -4,6 +4,7 @@
     border : 1px solid #d4d4d4
     background : #fff
     transition: all .2s ease-in
+    cursor : default
     &.project_card
         &:hover
             box-shadow: 6px 10px 10px 0px rgba(0,0,0,0.08)
@@ -32,10 +33,28 @@
         .left
             flex: 1
         .badge_wrap
-            margin-bottom : 16px   
+            margin-bottom : 16px
+            display : flex
+            align-items : center   
+            p
+                font-size : 18px 
+                line-height : 1
+                color : $primary
+                margin-right : 4px
         .title
             font-size : 17px 
             word-break: keep-all
+            +respond-to-down(small)
+                font-size : 14px
+            &:hover
+                text-decoration: underline
+        .fr_info
+            font-size : 16px 
+            word-break : keep-all
+            margin-bottom : 1rem
+            display : flex
+            span
+                +rightLine(10px,12px,#7b7b7b)
             +respond-to-down(small)
                 font-size : 14px
             &:hover
@@ -76,7 +95,7 @@
                 left : 0
                 top : 50%
                 transform: translateY(-50%)
-        
+
     .card_body
         padding : 20px
         padding-top : 0
@@ -145,3 +164,108 @@
     padding : 50px 0 !important
     +respond-to-down(small)
         padding : 20px 0 !important
+
+.card_portfolio
+    +respond-to-down(small)
+        margin-bottom : 20px
+    .img_wrap
+        display : block
+        position : relative
+        padding-top : (23000%/300)
+        overflow: hidden
+        border-radius: 16px
+        margin-bottom : 18px
+        &:hover
+            img
+                width : 110%
+            .action    
+                opacity : 1
+                visibility : visible
+        img
+            width : 100%
+            transition: width .2s ease-in
+            position : absolute
+            top : 50%
+            left : 50%
+            transform: translate(-50%,-50%)
+        .action
+            position : absolute
+            top : 0
+            width : 100%
+            bottom : 0
+            background : rgba(black,.65)
+            color : #fff
+            display : flex
+            align-items : center
+            justify-content : center
+            font-size : 16px
+            font-weight : 200
+            opacity : 0
+            visibility : hidden
+            transition : all .2s ease-in
+            a
+                +rightLine(10px,12px,#fff)
+                &:hover
+                    text-decoration : underline
+    .content
+        text-align : center
+        font-weight : 200
+        font-size : 16px
+        .info
+            margin-top : 4px
+            font-size : 14px
+            color : $blue
+        .main_port
+            &::after
+                margin-left : 8px
+                vertical-align : top
+                display : inline-block
+                content : '대표'
+                background : $primary
+                color : #fff
+                width : 30px
+                height : 16px
+                font-size : 13px
+                line-height : 16px
+.portfolio_add
+    display : block
+    position : relative
+    padding-top : (23000%/300)
+    overflow: hidden
+    border-radius: 16px
+    margin-bottom : 18px
+    &>div
+        +aspect-center
+        background : #f3f3f3
+        display : flex
+        flex-direction : column
+        align-items : center
+        justify-content : center
+        a
+            +circle(60px,#cbcbcb)
+            +addPlus(2px,24px,#fff)
+            margin-bottom : 25px
+        p
+            font-size : 14px
+            font-weight : 200
+            
+
+.color_card
+    border-radius : $gap/2
+    overflow : hidden
+    border : 1px solid #000
+    margin-bottom : 20px
+    .head
+        font-size : 16px
+        padding : 15px 24px
+        border-bottom : 1px solid #000
+    .body
+        padding : 24px
+        font-size : 14px
+    @each $color,$value in $theme-colors
+        &.#{$color} 
+            border-color : $value
+            .head
+                background : rgba($value,.1)
+                color : $value
+                border-bottom-color : $value

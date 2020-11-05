@@ -1,15 +1,19 @@
 <nav class="nav">
-    <a href="../html/main.html" class="logo">
+    <a href="/html/main.html" class="logo">
         TAGOPLUS
     </a>
     <div class="menu">
         <a href="/html/project_add/project_add.html">프로젝트 등록</a>
-        <a href="/html/project_add.html">프로젝트 찾기</a>
-        <a href="/html/project_add.html">프리랜서 찾기</a>
+        <a href="/html/project_search/project_search.html">프로젝트 찾기</a>
+        <a href="/html/freelancer_search/freelancer_search.html">프리랜서 찾기</a>
     </div>
-    <div class="login">
+    <div class="login" id="notLoggedIn">
         <a href="/html/member/login.html" class="btn btn_sm black outline">로그인</a>
         <a href="/html/member/register.html" class="btn btn_sm black">회원가입</a>
+    </div>
+    <div class="login" id="LoggedIn">
+        <a onclick="doLogout()" class="btn btn_sm black outline">로그아웃</a>
+        <a onclick="myPage()" class="btn btn_sm black">마이페이지</a>
     </div>
     <a href="../html/login.hmtl" class="login_btn">
         <img src="/images/svg/user.svg" alt="">
@@ -23,9 +27,13 @@
     <div class="mobile">
         <div class="header">
             <p>로그인 되어있지 않습니다.</p>
-            <div class="btn_wrap">
-                <a href="../html/login.html" class="btn btn_sm white">로그인</a>
-                <a href="../html/register.html" class="btn btn_sm black">회원가입</a>
+            <div class="btn_wrap" id="notLoggedInMob">
+                <a href="/html/login.html" class="btn btn_sm white">로그인</a>
+                <a href="/html/register.html" class="btn btn_sm black">회원가입</a>
+            </div>
+            <div class="btn_wrap" id="LoggedInMob">
+                <a href="/html/login.html" class="btn btn_sm white">로그아웃</a>
+                <a href="/html/register.html" class="btn btn_sm black">마이페이지</a>
             </div>
         </div>
         <div class="body">

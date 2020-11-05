@@ -1,0 +1,65 @@
+<div class="popup">
+    <div class="popup_header">
+        <h1 class="title">지원 요청</h1>
+        <a href="" onclick="closeLayer()" class="close"></a>
+    </div>
+    <div class="popup_body">
+        <div class="apply_header">
+            <p class="text-center">지원 요청할 프리랜서</p>
+            <h2 class="text-center text_blue">IDID0001</h2>
+        </div>
+        <p class="mb-4">※ ‘프리랜서 모집중’인 상태 및 모집마감이 되지 않은 프로젝트만 노출됩니다.</p>
+        <div class="table_wrap">
+            <table class="table dark centered">
+                <caption>내 프로젝트</caption>
+                <thead>
+                    <tr>
+                        <th>선택</th>
+                        <th>제목</th>
+                        <th>카테고리</th>
+                        <th>분야</th>
+                        <th>예상금액</th>
+                        <th>예상기간</th>
+                        <th>모집마감</th>
+                    </tr>
+                </thead>
+                <tbody id="repeatBody">
+                    <tr id="repeatTr">
+                        <td class="text-center">
+                            <label>
+                                <input type="radio" class="custom" name="project">
+                                <span>&nbsp;</span>
+                            </label>
+                        </td>
+                        <td class="text-left">
+                            <a href="">회사 홍보용 홈페이지 개발 의뢰합니다. </a>
+                        </td>
+                        <td>개발</td>
+                        <td>웹사이트</td>
+                        <td>1,000,000원</td>
+                        <td>100일</td>
+                        <td>2020-07-31</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" class="text-center">
+                            <p>프리랜서를 모집 중인 프로젝트가 없습니다.</p>
+                            <a href="/html/project_add/project_add.html" class="btn btn_sm orange">프로젝트 등록하기</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons">
+            <a href="" class="btn orange">
+                요청 하기
+            </a>
+            <a href="" class="btn dark">
+                취소하기
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    cloneRepeat('#repeatTr','#repeatBody',3)
+</script>
