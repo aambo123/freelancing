@@ -44,7 +44,7 @@ if (isIE) {
                 return response.text()
             })
             .then(function (data) {
-                document.querySelector("head").innerHTML = data;
+                $(data).prependTo('head');
             });/*  */
 
 
@@ -86,7 +86,7 @@ if (isIE) {
             return response.text()
         })
         .then(function (data) {
-            document.querySelector("head").innerHTML = data;
+            $(data).prependTo('head');
         });/*  */
 
 
@@ -102,7 +102,16 @@ if (isIE) {
         });/*  */
     }
     
-    
+    function urlParam(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        if (results == null){
+           return null;
+        }
+        else {
+           return decodeURI(results[1]) || 0;
+        }
+    }
+
     function activeNavs(data){
         var html = $.parseHTML(data);
         var paths = location.pathname.split('/');
@@ -116,7 +125,7 @@ if (isIE) {
     
         $(sideMenus).each(function (index, element) {
             var hrf = $(element).attr('href');
-            var searchValue = new URLSearchParams(location.search).get('search');
+            var searchValue = urlParam('search');
             if(location.search != ""){
                 if(searchValue != null && $(element).data('search') == searchValue){
                     $(element).addClass('active')
@@ -264,7 +273,7 @@ $('.custom_select').each(function (index, element) {
 
 $('body').click(function (e) {
 
-    if (e.target.closest('.custom_select') == null) {
+    if ($(e.target).closest('.custom_select') == null) {
         $('.custom_select ul').hide()
     }
 });
@@ -322,20 +331,17 @@ function closeLayer(){
 }
 
 
-class user {
-    constructor(id,pass,type){
-        this.id = id;
-        this.pass = pass;
-        this.type = type;
-    }
-    checkId(id,pass){
-        return this.id == id && this.pass == pass;
-    }
-}
-
 let users = [
-    new user('user','123','freelancer'),    
-    new user('client','123','client')
+    {
+        id : 'user',
+        pass : '123',
+        type:'freelancer'
+    },
+    {
+        id : 'client',
+        pass : '123',
+        type:'client'
+    }
 ]
 
 //var loggedIn = '<a href="/html/login.html" class="btn btn_sm white">로그아웃</a><a href="/html/mypage.html" class="btn btn_sm black">마이페이지</a>'
@@ -347,12 +353,10 @@ function checkLogin(){
     var pass = document.getElementById("user_pass").value;
     var userExist = false;
     for (i = 0; i < users.length; i++) {
-        if(users[i].id == id){
+        if(users[i].id == id && users[i].pass == pass){
             var type = users[i].type;
-            if(users[i].checkId(id,pass)){
-                userExist = true;
-                doLogin(type,id);
-            }
+            userExist = true;
+            doLogin(type,id);
             break;
         }
     }
