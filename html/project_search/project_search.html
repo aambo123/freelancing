@@ -9,57 +9,68 @@
     <header id="nav" class="">
     </header>
     <div class="sub_header">
-        프로젝트 등록
+        프로젝트 찾기
     </div>
     <div class="container main_con">
         <div class="row">
             <aside>
-                
-
-                <div class="filter_wrap">
-                    <div>
-                        <p>프로젝트 카테고리</p>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_category">
-                            <span>기획</span>
-                        </label>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_category">
-                            <span>디자인</span>
-                        </label>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_category">
-                            <span>개발</span>
-                        </label>
+                <div class="filter_wrap" id="filter">
+                    <div class="filter_head">
+                        <a onclick="openFilter(event)" class="filter_close"></a>
+                        <h1>검색 필터</h1>
+                        <a href="" class="filter_refresh">초기화</a>
                     </div>
-                    
+                    <div class="filter_body">
+
+                        <div class="filter_group">
+                            <p>프로젝트 카테고리</p>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_category">
+                                <span>기획</span>
+                            </label>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_category">
+                                <span>디자인</span>
+                            </label>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_category">
+                                <span>개발</span>
+                            </label>
+                            <a href="" class="filter_apply"></a>
+                        </div>
+
+                        <div class="filter_group">
+                            <p>프로젝트 분야</p>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_type">
+                                <span>웹사이트</span>
+                            </label>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_type">
+                                <span>쇼핑몰</span>
+                            </label>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_type">
+                                <span>시스템</span>
+                            </label>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_type">
+                                <span>네이티브앱</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" class="custom" name="project_type">
+                                <span>하이브리드앱</span>
+                            </label>
+                        </div>
 
 
+                    </div>
 
-                    <div>
-                        <p>프로젝트 분야</p>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_type">
-                            <span>웹사이트</span>
-                        </label>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_type">
-                            <span>쇼핑몰</span>
-                        </label>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_type">
-                            <span>시스템</span>
-                        </label>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_type">
-                            <span>네이티브앱</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" class="custom" name="project_type">
-                            <span>하이브리드앱</span>
-                        </label>
+                    <div class="filter_footer">
+                        <a  class="btn wide blue">적용하기</a>
                     </div>
                 </div>
+
             </aside>
             <main>
                 <div class="search_box">
@@ -100,6 +111,8 @@
                     </form>
                 </div>
                 
+                <a onclick="openFilter(event)" class="btn btn_sm grey open_filter">검색 필터</a>
+
                 <div class="flex align-center my-4">
                     <img src="/images/ms_icon1.png" alt="" class="mr-1" style="width: 20px;">
                     <strong><span id="totalCount">1,000</span>개</strong>의 프로젝트가 있습니다.

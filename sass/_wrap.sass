@@ -19,10 +19,57 @@
     padding : 20px
     border-radius: 4px
     margin-top : $gap/2
-    &>div:not(:last-child)
+    .filter_group
         border-bottom : 1px solid $border_color
         margin-bottom : 15px
         padding-bottom : 10px
+        +respond-to-down(small)
+            +px($gap/2 )
     p
         margin-bottom : 10px
         font-size : 16px
+    
+    .filter_head
+        display : flex
+        align-items : center 
+        padding : 0 $gap/2 
+        margin-bottom : $gap/2
+        border-bottom : 1px solid #000
+        a
+            display : inline-block
+            font-size : 12px
+            text-align : center
+            line-height : 50px
+            &.filter_refresh
+                width : 40px
+            &.filter_close
+                +size(20px)
+                +addCross(20px,1px,black)
+        h1
+            padding-left : 20px
+            font-size : 16px
+            text-align : center
+            flex : 1 
+        +respond-to(small)
+            display : none
+    .filter_body
+        flex : auto
+    .filter_footer
+        +respond-to(small)
+            display : none
+        +respond-to-down(small)
+            padding : 15px
+    +respond-to-down(small)
+        display : none
+        flex-direction : column
+        position : fixed
+        top : 0
+        bottom : 0
+        left : 0
+        right : 0
+        z-index : 10
+        background : #fff
+        margin : 0
+        padding : 0
+        &.open
+            display : flex

@@ -613,7 +613,10 @@ aside {
   max-width: 200px; }
 @media(max-width:767px) {
   aside {
-    display: none; } }
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%; } }
 main {
   position: relative;
   width: 100%;
@@ -885,6 +888,9 @@ footer {
   border: 1px solid #ea6718;
   border-radius: 6px;
   overflow: hidden; }
+@media(max-width:767px) {
+  .side_nav {
+    display: none; } }
   .side_nav .head {
     background: #fff5ef;
     font-size: 20px;
@@ -1290,6 +1296,14 @@ textarea.form_control {
     border-radius: 4px; }
   .btn.square {
     border-radius: 0; }
+  .btn.wide {
+    width: 100%; }
+@media(max-width:767px) {
+  .btn.open_filter {
+    margin-top: 15px; } }
+@media(min-width:768px) {
+  .btn.open_filter {
+    display: none; } }
   .btn.open {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -2390,6 +2404,8 @@ section.section {
 
 .table_wrap {
   overflow-x: auto; }
+  .table_wrap .table {
+    white-space: nowrap; }
 
 caption {
   text-align: center;
@@ -3325,14 +3341,92 @@ caption {
   padding: 20px;
   border-radius: 4px;
   margin-top: 15px; }
-  .filter_wrap > div:not(:last-child) {
+  .filter_wrap .filter_group {
     border-bottom: 1px solid #bbb;
     margin-bottom: 15px;
     padding-bottom: 10px; }
+@media(max-width:767px) {
+  .filter_wrap .filter_group {
+    padding-left: 15px;
+    padding-right: 15px; } }
   .filter_wrap p {
     margin-bottom: 10px;
     font-size: 16px; }
-
+  .filter_wrap .filter_head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #000; }
+    .filter_wrap .filter_head a {
+      display: inline-block;
+      font-size: 12px;
+      text-align: center;
+      line-height: 50px; }
+      .filter_wrap .filter_head a.filter_refresh {
+        width: 40px; }
+      .filter_wrap .filter_head a.filter_close {
+        width: 20px;
+        height: 20px;
+        position: relative; }
+        .filter_wrap .filter_head a.filter_close::after, .filter_wrap .filter_head a.filter_close::before {
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 20px;
+          background: black;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+                  transform: translate(-50%, -50%) rotate(-45deg); }
+        .filter_wrap .filter_head a.filter_close::before {
+          -webkit-transform: translate(-50%, -50%) rotate(45deg);
+                  transform: translate(-50%, -50%) rotate(45deg); }
+    .filter_wrap .filter_head h1 {
+      padding-left: 20px;
+      font-size: 16px;
+      text-align: center;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1; }
+@media(min-width:768px) {
+  .filter_wrap .filter_head {
+    display: none; } }
+  .filter_wrap .filter_body {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto; }
+@media(min-width:768px) {
+  .filter_wrap .filter_footer {
+    display: none; } }
+@media(max-width:767px) {
+  .filter_wrap .filter_footer {
+    padding: 15px; } }
+@media(max-width:767px) {
+  .filter_wrap {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+    margin: 0;
+    padding: 0; }
+    .filter_wrap.open {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
 .pagination {
   text-align: center;
   margin-top: 15px;
@@ -3690,6 +3784,9 @@ caption {
 @media(max-width:767px) {
   .popup_wrapper .popup .popup_body .buttons {
     margin-top: 20px; } }
+    .popup_wrapper .popup .popup_footer {
+      margin-top: 15px; }
+
 .apply_header {
   text-align: center;
   border-bottom: 1px solid #000;

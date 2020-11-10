@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/js/slick//slick.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/slick//slick.js"></script>
 </head>
+
 <body>
     <header id="nav" class="">
     </header>
@@ -14,50 +15,60 @@
     <div class="container main_con">
         <div class="row">
             <aside>
-                
-
-                <div class="filter_wrap">
-                    <div>
-                        <p>프로젝트 카테고리</p>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_category">
-                            <span>기획</span>
-                        </label>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_category">
-                            <span>디자인</span>
-                        </label>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_category">
-                            <span>개발</span>
-                        </label>
+                <div class="filter_wrap" id="filter">
+                    <div class="filter_head">
+                        <a onclick="openFilter(event)" class="filter_close"></a>
+                        <h1>검색 필터</h1>
+                        <a href="" class="filter_refresh">초기화</a>
                     </div>
-                    
+                    <div class="filter_body">
+
+                        <div class="filter_group">
+                            <p>프로젝트 카테고리</p>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_category">
+                                <span>기획</span>
+                            </label>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_category">
+                                <span>디자인</span>
+                            </label>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_category">
+                                <span>개발</span>
+                            </label>
+                            <a href="" class="filter_apply"></a>
+                        </div>
+
+                        <div class="filter_group">
+                            <p>프로젝트 분야</p>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_type">
+                                <span>웹사이트</span>
+                            </label>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_type">
+                                <span>쇼핑몰</span>
+                            </label>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_type">
+                                <span>시스템</span>
+                            </label>
+                            <label class="mb-2">
+                                <input type="checkbox" class="custom" name="project_type">
+                                <span>네이티브앱</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" class="custom" name="project_type">
+                                <span>하이브리드앱</span>
+                            </label>
+                        </div>
 
 
+                    </div>
 
-                    <div>
-                        <p>프로젝트 분야</p>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_type">
-                            <span>웹사이트</span>
-                        </label>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_type">
-                            <span>쇼핑몰</span>
-                        </label>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_type">
-                            <span>시스템</span>
-                        </label>
-                        <label class="mb-2">
-                            <input type="checkbox" class="custom" name="project_type">
-                            <span>네이티브앱</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" class="custom" name="project_type">
-                            <span>하이브리드앱</span>
-                        </label>
+                    <div class="filter_footer">
+                        <a  class="btn wide blue">적용하기</a>
                     </div>
                 </div>
             </aside>
@@ -99,7 +110,9 @@
                         </div>
                     </form>
                 </div>
-                
+
+                <a onclick="openFilter(event)" class="btn btn_sm grey open_filter">검색 필터</a>
+
                 <div class="flex align-center my-4">
                     <img src="/images/ms_icon3.png" alt="" class="mr-1" style="width: 20px;">
                     <strong><span id="totalCount">1,000</span>명</strong>의 프리랜서가 있습니다.
@@ -110,123 +123,123 @@
                     <a href="" class="tab">포트폴리오 많은 순</a>
                 </div>
 
-                    <div class="row" id="repeatWrap">
-                        <div class="col-sm-4 repeatProj">
-                            <div class="card_wrap project_card mb-6">
-                                <div class="card">
-                                    <div class="card_head">
-                                        <div class="left">
-                                            <div class="badge_wrap">
-                                                <p>IDID0001</p>
-                                                <span class="badge green">활동가능</span>
-                                            </div>
-                                            <a class="fr_info" href="freelancer_detail.html">
-                                                <span>개발자</span>
-                                                <span>웹사이트, 쇼핑몰</span>
-                                            </a>
+                <div class="row" id="repeatWrap">
+                    <div class="col-sm-4 repeatProj">
+                        <div class="card_wrap project_card mb-6">
+                            <div class="card">
+                                <div class="card_head">
+                                    <div class="left">
+                                        <div class="badge_wrap">
+                                            <p>IDID0001</p>
+                                            <span class="badge green">활동가능</span>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="card_body">
-                                        <p>
-                                            저희는 몽골 개발자들로 구성된 인력으로서 
-                                            최신 기술을 이용하여, 완벽한 결과 물을 
-                                            만들어 낼 수 있습니다.
-                                            맡겨만 주신다면 최상의 퀄리티로 보답하겠
-                                            습니다!  감사합니다!
-
-                                        </p>
-                                    </div>
-                                    <div class="card_footer">
-                                        <span>PHP</span>
-                                        <span>.NET</span>
-                                        <span>MYSQL</span>
-                                        <span>DBA</span>
-                                        <span>ORACLE</span>
-                                        <span>MARIADB</span>
-                                        <span>APACHE</span>
-                                        <span>WINDOWS</span>
+                                        <a class="fr_info" href="freelancer_detail.html">
+                                            <span>개발자</span>
+                                            <span>웹사이트, 쇼핑몰</span>
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                            
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card_wrap project_card mb-6">
-                                <div class="card">
-                                    <div class="card_head">
-                                        <div class="left">
-                                            <div class="badge_wrap">
-                                                <p>IDID0002</p>
-                                                <span class="badge grey">활동불가능</span>
-                                            </div>
-                                            <a class="fr_info" href="freelancer_detail.html">
-                                                <span>개발자</span>
-                                                <span>웹사이트, 쇼핑몰</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card_body">
-                                        <p>
-                                            저희는 몽골 개발자들로 구성된 인력으로서 
-                                            최신 기술을 이용하여, 완벽한 결과 물을 
-                                            만들어 낼 수 있습니다.
-                                            맡겨만 주신다면 최상의 퀄리티로 보답하겠
-                                            습니다!  감사합니다!
 
-                                        </p>
-                                    </div>
-                                    <div class="card_footer">
-                                        <span>PHP</span>
-                                        <span>.NET</span>
-                                        <span>MYSQL</span>
-                                        <span>DBA</span>
-                                        <span>ORACLE</span>
-                                        <span>MARIADB</span>
-                                        <span>APACHE</span>
-                                        <span>WINDOWS</span>
-                                    </div>
+                                <div class="card_body">
+                                    <p>
+                                        저희는 몽골 개발자들로 구성된 인력으로서
+                                        최신 기술을 이용하여, 완벽한 결과 물을
+                                        만들어 낼 수 있습니다.
+                                        맡겨만 주신다면 최상의 퀄리티로 보답하겠
+                                        습니다! 감사합니다!
+
+                                    </p>
+                                </div>
+                                <div class="card_footer">
+                                    <span>PHP</span>
+                                    <span>.NET</span>
+                                    <span>MYSQL</span>
+                                    <span>DBA</span>
+                                    <span>ORACLE</span>
+                                    <span>MARIADB</span>
+                                    <span>APACHE</span>
+                                    <span>WINDOWS</span>
                                 </div>
                             </div>
-                            
                         </div>
+
                     </div>
-                    <div class="pagination">
-                        <ul>
-                            <li>
-                                <a href="" class="page first">&nbsp;</a>
-                            </li>
-                            <li>
-                                <a href="" class="page prev">&nbsp;</a>
-                            </li>
-                            <li>
-                                <a href="" class="page">1</a>
-                            </li>
-                            <li>
-                                <a href="" class="page">2</a>
-                            </li>
-                            <li>
-                                <a href="" class="page">3</a>
-                            </li>
-                            <li>
-                                <a href="" class="page active">4</a>
-                            </li>
-                            <li>
-                                <a href="" class="page">5</a>
-                            </li>
-                            <li>
-                                <a href="" class="page">6</a>
-                            </li>
-                            <li>
-                                <a href="" class="page next">&nbsp;</a>
-                            </li>
-                            <li>
-                                <a href="" class="page last">&nbsp;</a>
-                            </li>
-                        </ul>
+                    <div class="col-sm-4">
+                        <div class="card_wrap project_card mb-6">
+                            <div class="card">
+                                <div class="card_head">
+                                    <div class="left">
+                                        <div class="badge_wrap">
+                                            <p>IDID0002</p>
+                                            <span class="badge grey">활동불가능</span>
+                                        </div>
+                                        <a class="fr_info" href="freelancer_detail.html">
+                                            <span>개발자</span>
+                                            <span>웹사이트, 쇼핑몰</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="card_body">
+                                    <p>
+                                        저희는 몽골 개발자들로 구성된 인력으로서
+                                        최신 기술을 이용하여, 완벽한 결과 물을
+                                        만들어 낼 수 있습니다.
+                                        맡겨만 주신다면 최상의 퀄리티로 보답하겠
+                                        습니다! 감사합니다!
+
+                                    </p>
+                                </div>
+                                <div class="card_footer">
+                                    <span>PHP</span>
+                                    <span>.NET</span>
+                                    <span>MYSQL</span>
+                                    <span>DBA</span>
+                                    <span>ORACLE</span>
+                                    <span>MARIADB</span>
+                                    <span>APACHE</span>
+                                    <span>WINDOWS</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-            </main>  
+                </div>
+                <div class="pagination">
+                    <ul>
+                        <li>
+                            <a href="" class="page first">&nbsp;</a>
+                        </li>
+                        <li>
+                            <a href="" class="page prev">&nbsp;</a>
+                        </li>
+                        <li>
+                            <a href="" class="page">1</a>
+                        </li>
+                        <li>
+                            <a href="" class="page">2</a>
+                        </li>
+                        <li>
+                            <a href="" class="page">3</a>
+                        </li>
+                        <li>
+                            <a href="" class="page active">4</a>
+                        </li>
+                        <li>
+                            <a href="" class="page">5</a>
+                        </li>
+                        <li>
+                            <a href="" class="page">6</a>
+                        </li>
+                        <li>
+                            <a href="" class="page next">&nbsp;</a>
+                        </li>
+                        <li>
+                            <a href="" class="page last">&nbsp;</a>
+                        </li>
+                    </ul>
+                </div>
+            </main>
 
         </div>
     </div>
@@ -234,12 +247,24 @@
     <script src="/js/common.js"></script>
 
     <script>
-        $('.order .tab').click(function (e) { 
+        $('.order .tab').click(function (e) {
             e.preventDefault();
             $('.order .tab').removeClass('active');
             $(this).addClass('active');
         });
         cloneRepeat('.repeatProj', '#repeatWrap', 3)
+
+        function openFilter(e) {
+            e.preventDefault();
+            var isOpen = $('#filter').hasClass('open');
+            if(!isOpen){
+                $('body').css('overflow','hidden')
+            }else{
+                $('body').removeAttr('style')
+            }
+            $('#filter').toggleClass('open')
+        }
+        
     </script>
 
 </body>

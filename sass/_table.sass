@@ -1,5 +1,7 @@
 .table_wrap
-    overflow-x: auto
+    overflow-x : auto
+    .table
+        white-space : nowrap
 caption
     text-align : center
     padding : 14px
@@ -14,14 +16,14 @@ caption
          
 
 .table
-    width: 100%
+    width : 100%
     +border(('top','left'),1px,$border-color)
     font-size : 14px
     &.responsive
-        display: block
-        width: 100%
-        overflow-x: auto
-        -webkit-overflow-scrolling: touch
+        display : block
+        width : 100%
+        overflow-x : auto
+        -webkit-overflow-scrolling : touch
     &.centered
         text-align : center
     &.table-borderless

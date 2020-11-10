@@ -23,7 +23,14 @@
         border-radius: 4px
     &.square
         border-radius: 0
-    
+    &.wide
+        width : 100%
+    &.open_filter
+        +respond-to-down(small)
+            margin-top : 15px
+        +respond-to(small)
+            display : none
+
     &.open
         display : inline-flex
         align-items : center

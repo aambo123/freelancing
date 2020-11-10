@@ -298,7 +298,7 @@ function openLayer(obj) {
         id: 'modal',
         "class": 'popup_wrapper'
     }).appendTo('body');
-
+    $('body').css('overflow','hidden')
     $('#modal').waitMe({
         effect: 'win8',
         text: '',
@@ -306,6 +306,7 @@ function openLayer(obj) {
         color: 'white',
         textPos: 'vertical',
     })
+
 
     if (href == '') {
         alert('no link')
@@ -326,6 +327,7 @@ function openLayer(obj) {
 
 function closeLayer(){
     event.preventDefault();
+    $('body').removeAttr('style')
     $('#modal').hide()
     $('#modal').remove()
 }
@@ -382,4 +384,16 @@ function myPage(){
     var user_type = sessionStorage.getItem('user_type');
     var mypage = user_type == "client" ? "/html/mypage/client/pending_project.html":"/html/mypage/freelancer/myprofile.html"
     location.href = mypage
+}
+
+
+function openFilter(e) {
+    e.preventDefault();
+    var isOpen = $('#filter').hasClass('open');
+    if(!isOpen){
+        $('body').css('overflow','hidden')
+    }else{
+        $('body').removeAttr('style')
+    }
+    $('#filter').toggleClass('open')
 }
